@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="bower_components/material-design-lite/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/stepper.css">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+</head>
+
+<body style="width:500px; height:600px;">
+    <!-- style -->
+    <style>
+    .mdl-stepper>.mdl-step>.mdl-step__content {}
+    </style>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"><img src="images/logow.png" alt="logoLIFeS" height="20" /> <img src="images/logo.png" alt="logoLIFeS" height="20" /> <img src="images/ufscar.png" alt="logoLIFeS" height="20" /></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Uiflex </span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="perfil.html">Início</a>
+                <a class="mdl-navigation__link" href="sobre.html">Sobre</a>
+                <a class="mdl-navigation__link" href="politica.html">Política de Privacidade</a>
+            </nav>
+        </div>
+        <section class="mdl-stepper-demo">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <!-- markup -->
+                    <ul class="mdl-stepper" id="demo-stepper-non-linear">
+                        <li class="mdl-step">
+                            <span class="mdl-step__label">
+              <span class="mdl-step__title">
+                <span class="mdl-step__title-text">Configurações de Acessibilidade</span>
+                            <span class="mdl-step__title-message">Locomoção</span>
+                            </span>
+                            </span>
+                            <div class="mdl-step__content">
+                                <h4 class="">Você tem alguma deficiência motora?</h4>
+                                <label id="Teste1" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                                    <input type="radio" id="option-1" class="mdl-radio__button" name="locomocao" value="1">
+                                    <span class="mdl-radio__label">Sim</span>
+                                </label>
+                                <label id="Teste2" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                                    <input type="radio" id="option-2" class="mdl-radio__button" name="locomocao" value="2">
+                                    <span class="mdl-radio__label">Não</span>
+                                </label>
+                            </div>
+                            <div class="mdl-step__actions">
+                                <button id="btnS1" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--raised" data-stepper-next>Salvar</button>
+                            </div>
+                        </li>
+                        <li class="mdl-step">
+                            <span class="mdl-step__label">
+                          <span class="mdl-step__title">
+                            <span class="mdl-step__title-text">Configurações de Acessibilidade</span>
+                            <span class="mdl-step__title-message">Audição</span>
+                            </span>
+                            </span>
+                            <div class="som mdl-step__content">
+                                <audio id="audio" src="song.mp3" loop controls>
+                                    <p>Seu navegador não suporta o elemento audio </p>
+                                </audio>
+                                <h4 class="">Você está ouvindo o som de um gato miando?</h4>
+                                <label id="A1" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                                    <input type="radio" id="option-3" class="mdl-radio__button" name="audicao" value="1" checked>
+                                    <span class="mdl-radio__label">Sim</span>
+                                </label>
+                                <label id="A2" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                                    <input type="radio" id="option-4" class="mdl-radio__button" name="audicao" value="2">
+                                    <span class="mdl-radio__label">Não</span>
+                                </label>
+                            </div>
+                            <div class="mdl-step__actions">
+                                <button id="btnS2" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--raised" data-stepper-next>
+                                    Salvar
+                                </button>
+                            </div>
+                        </li>
+                        <li class="mdl-step">
+                            <span class="mdl-step__label">
+                          <span class="mdl-step__title">
+                            <span class="mdl-step__title-text">Configurações de Acessibilidade</span>
+                            <span class="mdl-step__title-message">Fala</span>
+                            </span>
+                            </span>
+                            <div class="mdl-step__content">
+                                <h4 class="">Você tem alguma dificuldade na fala?</h4>
+                                <label id="F1" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
+                                    <input type="radio" id="option-5" class="mdl-radio__button" name="fala" value="1">
+                                    <span class="mdl-radio__label">Sim</span>
+                                </label>
+                                <label id="F2" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
+                                    <input type="radio" id="option-6" class="mdl-radio__button" name="fala" value="2" checked>
+                                    <span class="mdl-radio__label">Não</span>
+                                </label>
+                            </div>
+                            <div class="mdl-step__actions">
+                                <button id="btnS3" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--raised" data-stepper-next>
+                                    Salvar
+                                </button>
+                            </div>
+                        </li>
+                        <li class="mdl-step">
+                            <span class="mdl-step__label">
+                          <span class="mdl-step__title">
+                            <span class="mdl-step__title-text">Configurações de Acessibilidade</span>
+                            <span class="mdl-step__title-message">Visão</span>
+                            </span>
+                            </span>
+                            <div class="mdl-step__content">
+                                <div class="mdl-typography--text-center">
+                                    <img src="images/visao.png" alt="Visao" />
+                                </div>
+                                <h4 class="">O que você vê na imagem acima?</h4>
+                                <label id="V1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="visao-1">
+                                    <input type="checkbox" id="visao-1" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Círculo</span>
+                                </label>
+                                <label id="V2" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="visao-2">
+                                    <input type="checkbox" id="visao-2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Triângulo</span>
+                                </label>
+                                <label id="V3" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="visao-3">
+                                    <input type="checkbox" id="visao-3" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Estrela</span>
+                                </label>
+                            </div>
+                            <div class="mdl-step__actions">
+                                <button id="btnS4" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--raised" data-stepper-next>
+                                    Salvar
+                                </button>
+                            </div>
+                        </li>
+                        <li class="mdl-step">
+                            <span class="mdl-step__label">
+                          <span class="mdl-step__title">
+                            <span class="mdl-step__title-text">Configurações de Acessibilidade</span>
+                            <span class="mdl-step__title-message">Daltonismo</span>
+                            </span>
+                            </span>
+                            <div class="mdl-step__content">
+                                <h4 class="">Indique quais cores você está vendo nos círculos abaixo:</h4>
+                                <div class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--2-col">
+                                        <div class="bola red"></div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col">
+                                        <label id="D1" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-7">
+                                            <input type="radio" id="option-7" class="mdl-radio__button" name="daltonismo" value="1">
+                                            <span class="mdl-radio__label">Vermelho</span>
+                                        </label>
+                                        <br />
+                                        <label id="D2" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-8">
+                                            <input type="radio" id="option-8" class="mdl-radio__button" name="daltonismo" value="2">
+                                            <span class="mdl-radio__label">Outra cor</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--2-col">
+                                        <div class="bola green"></div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col">
+                                        <label id="D3" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-9">
+                                            <input type="radio" id="option-9" class="mdl-radio__button" name="daltonismo2" value="1">
+                                            <span class="mdl-radio__label">Verde</span>
+                                        </label>
+                                        <br />
+                                        <label id="D4" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-10">
+                                            <input type="radio" id="option-10" class="mdl-radio__button" name="daltonismo2" value="2">
+                                            <span class="mdl-radio__label">Outra cor</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-step__actions">
+                                <button id="btnS5" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--raised dialog-button" data-stepper-next>
+                                    Salvar
+                                </button>
+                                <dialog id="dialog" class="mdl-dialog">
+                                    <div class="mdl-dialog__content">
+                                        <h4>
+                                        Perfil de usuário salvo com sucesso. Agora vamos gerar seu perfil de interação.
+                                    </h4>
+                                    </div>
+                                    <div class="mdl-dialog__actions">
+                                        <button type="button" class="mdl-button">OK</button>
+                                    </div>
+                                </dialog>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    </section>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+    <script src="scripts/whoami.js"></script>
+    <script src="scripts/stepper.js"></script>
+    <!-- script -->
+</body>
+
+</html>

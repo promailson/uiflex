@@ -1,0 +1,46 @@
+{
+    "name": "UIFlex",
+    "version": "1.1.3",
+    "manifest_version": 2,
+    "description": "Monte seu perfil de interação para adaptar as interfaces das aplicações web",
+    "icons": {
+        "16": "images/icon-16.png",
+        "128": "images/icon-128.png"
+    },
+    "default_locale": "en",
+    "background": {
+        "scripts": [
+            "scripts/chromereload.js",
+            "scripts/background.js"
+        ]
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "background",
+        "contentSettings",
+        "notifications",
+        "storage"
+    ],
+    "omnibox": {
+        "keyword": "uiflex"
+    },
+
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["bower_components/jquery/dist/jquery.min.js", "inject.js"],
+        "all_frames": true
+    }],
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon-19.png",
+            "38": "images/icon-38.png"
+        },
+        "default_title": "Uiflex",
+        "default_popup": "perfil.html"
+    },
+    "web_accessible_resources": [
+        "images/icon-48.png"
+    ]
+}

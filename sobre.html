@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bower_components/material-design-lite/material.min.css" rel="stylesheet">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+</head>
+
+<body style="width:500px; height:600px;">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"><img src="images/uiflex.png" alt="logoLIFeS" height="30" /> <img src="images/logo.png" alt="logoLIFeS" height="20" /> <img src="images/ufscar.png" alt="logoLIFeS" height="20" /></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">UIFlex </span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="perfil.html">Início</a>
+                <a class="mdl-navigation__link" href="sobre.html">Sobre</a>
+                <a class="mdl-navigation__link" href="politica.html">Política de Privacidade</a>
+            </nav>
+
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content politica">
+                <h4>Sobre</h4>
+                <p>A extensão UIFlex consiste em uma ferramenta web que permite ao usuário definir um Perfil de Interação para ser utilizado para flexibilizar diferentes aplicações web, considerando seu Perfil de Usuário, suas preferências e conhecimentos
+                    respaldados de design, denominadas Regras de Design. Tais conhecimentos são dados obtidos de autoridades consolidadas no desenvolvimento web, como por exemplo W3C.</p>
+
+                <p>Como pode ser visto na imagem abaixo, a ferramenta está dividida em duas etapas: i) preenchimento do Perfil do Usuário e criação do Perfil de Interação considerando as Regras de Design e ii) flexibilização das aplicações web utilizando
+                    o Perfil de Interação criado na etapa anterior. </p>
+                <p>
+
+                    <img src="images/Arquitetura2.png" alt="Arquitetura" width="100%" /></p>
+                <p>Na primeira etapa o usuário deverá preencher seu Perfil de Usuário, contendo seus dados pessoais, características, preferências, etc. Esse procedimento será feito utilizando a ferramenta “Who Am I?”. Após o preenchimento do Perfil de Usuário,
+                    a extensão UIFlex fará uma requisição ao servidor do LIFeS (Laboratório de Interação Flexível e Sustentável), onde estão armazenadas as Regras de Design consolidadas no desenvolvimento web.</p>
+                <p>Após a realização da requisição ao servidor do LIFeS, a extensão UIFlex associará as regras de design com os dados preenchidos pelo usuário na ferramenta “Who Am I?” e, em seguida, será gerado o perfil de interação. Posteriormente o usuário
+                    deverá analisar as adaptações propostas pela UIFlex e poderá alterá-las caso julgue necessário. Após a confirmação, o Perfil de Interação poderá ser salvo para ser utilizado por sistemas desenvolvidos para utiliza-lo ou o usuário poderá
+                    injetar esse perfil a sites que não foram desenvolvidos para utilizá-lo, porém, não é garantido que todas as componentes funcionem da forma correta.</p>
+                <p>Para aumentar a privacidade dos dados de perfil dos usuários, a extensão UIFlex manterá os mesmos armazenados no dispositivo do usuário. Assim, as únicas informações que trafegarão na rede de internet será as Regras de Design. </p>
+                <p>
+                    Para mais informações acesse a página da ferramenta: <a href="http://lifes.dc.ufscar.br/uiflex" target="_blank">lifes.dc.ufscar.br/uiflex</a>.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- /container -->
+    <!-- build:js scripts/popup-vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src="scripts/perfil.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

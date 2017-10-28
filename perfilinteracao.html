@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bower_components/material-design-lite/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/stepper.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+    <title>Configurar perfil de interação</title>
+</head>
+
+<body style="width:500px; height:500px;">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Uiflex</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">UIFlex</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content center">
+                <div id="perfilInteracao">
+                    <h4>Regras a serem aplicadas</h4>
+                    <div id="animacaoPI" class="center">
+                        <p>Gerando perfil de interação</p>
+                        <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+                    </div>
+                    <div id="formulario">
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                        <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                        <span class="mdl-switch__label"></span>
+                      </label>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/perfil.js"></script>
+</body>
+
+</html>

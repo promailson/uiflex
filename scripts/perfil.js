@@ -1,7 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
     'use strict';
+
+
+
     var cont = 0;
-    chrome.storage.sync.get(function(data) {
+    var oitantes;
+    chrome.storage.sync.get(function (data) {
         console.log(data);
         //if (data.first != 1) { first(); }
 
@@ -15,11 +19,18 @@ $(document).ready(function() {
                 $("#animacaoPI").show();
                 t = 2000;
             }
-            setTimeout(function() {
+            setTimeout(function () {
                 $("#animacaoPI").hide();
+                // $.getJSON("http://slifes.dc.ufscar.br/uiflex/oitanteAtivo.json", function (json) {
+                //     oitantes = json[0].ativo;
+                //     console.log(json);
+                // }).fail(function () {
+                //     alert("Não foi possível obter oitantes");
+                // });
+
+                $.getJSON("http://slifes.dc.ufscar.br/uiflex/rules.json", function (json) {
 
 
-                $.getJSON("http://slifes.dc.ufscar.br/uiflex/rules.json", function(json) {
                     console.log(json);
                     //alert(json[0].context.user.predicate);
                     for (var i in json) {
@@ -78,7 +89,7 @@ $(document).ready(function() {
                                     '  <span class="mdl-switch__label"><span id="t' + json[i].id + '">' + json[i].name + '</span></span>' +
                                     '</label><div class="source">Autoridade: <a href="' + json[i].link_source + '" target="_blank">' + json[i].source + '</a></div>' +
                                     '<div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="t' + json[i].id + '">' + json[i].description + '</div>');
-                               
+
                             } else {
                                 $("#regras").append('<label id="l' + json[i].id + '" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="' + json[i].id + '"> ' +
                                     '  <input type="checkbox" id="' + json[i].id + '" class="mdl-switch__input">' +
@@ -88,14 +99,14 @@ $(document).ready(function() {
                             }
                             cont++;
                         }
-                        if (json[i].id == "rule35" && json[i].context.user.predicate == "AbilityToDifferentiateColors" && json[i].context.user.object == "no" && (data.daltonismo == 2 || data.daltonismo2 == 2)&& (data.visao1 != 2 || data.visao2 != 2 || data.visao3 != 2)) {
+                        if (json[i].id == "rule35" && json[i].context.user.predicate == "AbilityToDifferentiateColors" && json[i].context.user.object == "no" && (data.daltonismo == 2 || data.daltonismo2 == 2) && (data.visao1 != 2 || data.visao2 != 2 || data.visao3 != 2)) {
                             if (data.rule35 == 1 && data.rule5 != 1) {
                                 $("#regras").append('<label id="l' + json[i].id + '" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="' + json[i].id + '"> ' +
                                     '  <input type="checkbox" id="' + json[i].id + '" class="mdl-switch__input" checked>' +
                                     '  <span class="mdl-switch__label"><span id="t' + json[i].id + '">' + json[i].name + '</span></span>' +
                                     '</label><div class="source">Autoridade: <a href="' + json[i].link_source + '" target="_blank">' + json[i].source + '</a></div>' +
                                     '<div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="t' + json[i].id + '">' + json[i].description + '</div>');
-                                 chrome.storage.sync.set({ 'rule5': 2 });
+                                chrome.storage.sync.set({ 'rule5': 2 });
                             } else {
                                 $("#regras").append('<label id="l' + json[i].id + '" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="' + json[i].id + '"> ' +
                                     '  <input type="checkbox" id="' + json[i].id + '" class="mdl-switch__input">' +
@@ -268,7 +279,7 @@ $(document).ready(function() {
                         }
                     }
 
-                    $('#rule5').change(function() {
+                    $('#rule5').change(function () {
                         chrome.storage.sync.set({
                             'rule5': $('#rule5').is(':checked') ? 1 : 2
                         });
@@ -282,66 +293,66 @@ $(document).ready(function() {
 
                         }
                     });
-                    $('#rule6').change(function() {
+                    $('#rule6').change(function () {
                         chrome.storage.sync.set({
                             'rule6': $('#rule6').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule7').change(function() {
+                    $('#rule7').change(function () {
                         chrome.storage.sync.set({
                             'rule7': $('#rule7').is(':checked') ? 1 : 2
                         });
 
                     });
-                    $('#rule8').change(function() {
+                    $('#rule8').change(function () {
                         chrome.storage.sync.set({
                             'rule8': $('#rule8').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule9').change(function() {
+                    $('#rule9').change(function () {
                         chrome.storage.sync.set({
                             'rule9': $('#rule9').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule10').change(function() {
+                    $('#rule10').change(function () {
                         chrome.storage.sync.set({
                             'rule10': $('#rule10').is(':checked') ? 1 : 2
                         });
 
                     });
-                    $('#rule11').change(function() {
+                    $('#rule11').change(function () {
                         chrome.storage.sync.set({
                             'rule11': $('#rule11').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule12').change(function() {
+                    $('#rule12').change(function () {
                         chrome.storage.sync.set({
                             'rule12': $('#rule12').is(':checked') ? 1 : 2
                         });
 
                     });
-                    $('#rule13').change(function() {
+                    $('#rule13').change(function () {
                         chrome.storage.sync.set({
                             'rule13': $('#rule13').is(':checked') ? 1 : 2
                         });
 
                     });
-                    $('#rule14').change(function() {
+                    $('#rule14').change(function () {
                         chrome.storage.sync.set({
                             'rule14': $('#rule14').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule33').change(function() {
+                    $('#rule33').change(function () {
                         chrome.storage.sync.set({
                             'rule33': $('#rule33').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule34').change(function() {
+                    $('#rule34').change(function () {
                         chrome.storage.sync.set({
                             'rule34': $('#rule34').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule35').change(function() {
+                    $('#rule35').change(function () {
                         chrome.storage.sync.set({
                             'rule35': $('#rule35').is(':checked') ? 1 : 2
                         });
@@ -354,16 +365,20 @@ $(document).ready(function() {
                             });
                         }
                     });
-                    $('#rule36').change(function() {
+                    $('#rule36').change(function () {
                         chrome.storage.sync.set({
                             'rule36': $('#rule36').is(':checked') ? 1 : 2
                         });
                     });
-                    $('#rule37').change(function() {
+                    $('#rule37').change(function () {
                         chrome.storage.sync.set({
                             'rule37': $('#rule37').is(':checked') ? 1 : 2
                         });
                     });
+                    //console.log(oitantes);
+                    // chrome.storage.sync.set({
+                    //     'oitante': oitantes
+                    // });
                     chrome.storage.sync.set({
                         'quant': cont
                     });
@@ -375,7 +390,7 @@ $(document).ready(function() {
                     });
                     componentHandler.upgradeDom();
                     //
-                }).fail(function() {
+                }).fail(function () {
                     alert("Não foi possível obter as regras de design");
                 });
             }, t);
@@ -387,9 +402,27 @@ $(document).ready(function() {
         }
     });
 
+    // var oitanteAtual = oitantes;
+
+    // setInterval(function () {
+    //     $.getJSON("http://slifes.dc.ufscar.br/uiflex/oitanteAtivo.json", function (json) {
+    //         oitantes = json[0].ativo;
+    //         if (oitanteAtual != oitantes) {
+    //             chrome.storage.sync.set({
+    //                 'oitante': oitantes
+    //             });
+    //             oitanteAtual = oitantes;
+    //         }
+    //         console.log(oitantes);
+    //     }).fail(function () {
+    //         alert("Não foi possível obter oitantes");
+    //     });
+
+    // }, 1000);
 
 
-    $('#excluirSim').click(function() {
+
+    $('#excluirSim').click(function () {
         chrome.storage.sync.set({
             'perfilusuario': 2
         });
@@ -406,21 +439,21 @@ $(document).ready(function() {
     if (!dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
     }
-    showDialogButton.addEventListener('click', function() {
+    showDialogButton.addEventListener('click', function () {
         dialog.showModal();
     });
-    dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.querySelector('.close').addEventListener('click', function () {
         dialog.close();
     });
 
-    $('#m1').click(function() {
+    $('#m1').click(function () {
         chrome.tabs.executeScript({
             file: 'inject.js'
         });
     });
-    $('#baixarPI').click(function() {
+    $('#baixarPI').click(function () {
 
-        chrome.storage.sync.get(function(data) {
+        chrome.storage.sync.get(function (data) {
             var jsonStr = '{"perfil":[]}';
             var obj = JSON.parse(jsonStr);
 

@@ -1,10 +1,17 @@
 // this is the code which will be injected into a given page...
 
-(function() {
+(function () {
 
-    chrome.storage.sync.get(function(data) {
+   
+
+    chrome.storage.sync.get(function (data) {
+        console.log(data);
         var styleNode = document.createElement('style');
         styleNode.type = "text/css";
+        var ativo;
+        
+
+
         if (data.rule12 == 1) {
             var videoElement = document.querySelector("video");
             if (videoElement) {
@@ -16,7 +23,7 @@
             }
         }
         if (data.rule8 == 1) {
- 
+
             // browser detection (based on prototype.js)
             if (!!(window.attachEvent && !window.opera)) {
                 styleNode.styleSheet.cssText = ':focus {background: rgb(139, 195, 74)!important; color:#fff!important; }';
@@ -28,14 +35,14 @@
 
         }
         if (data.rule6 == 1) {
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('link[rel=stylesheet]').remove();
             });
 
         }
-        if (data.rule13 == 1) {       
-            $(document).ready(function() {
-                $('*').each(function() {
+        if (data.rule13 == 1) {
+            $(document).ready(function () {
+                $('*').each(function () {
                     var k = parseInt($(this).css('font-size'));
                     //alert(k);
                     if (k >= 18)
@@ -48,8 +55,8 @@
             });
 
         } else if (data.rule14 == 1) {
-            $(document).ready(function() {
-                $('*').each(function() {
+            $(document).ready(function () {
+                $('*').each(function () {
                     var k = parseInt($(this).css('font-size'));
                     //alert(k);
                     if (k >= 18)
@@ -62,8 +69,8 @@
             });
         }
         if (data.rule7 == 1) {
-            $(document).ready(function() {
-                $('audio').each(function() {
+            $(document).ready(function () {
+                $('audio').each(function () {
                     this.pause(); // Stop playing
                     this.currentTime = 0;
                 });
@@ -71,14 +78,14 @@
 
         }
         if (data.rule34 == 1) {
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('link[rel=stylesheet],img, video, audio').remove();
             });
 
         }
         if (data.rule10 == 1) {
-            $(document).ready(function() {
-                $('form').find("input[type=text], input[type=password], textarea").each(function(ev) {
+            $(document).ready(function () {
+                $('form').find("input[type=text], input[type=password], textarea").each(function (ev) {
                     if (!$(this).val()) {
                         $(this).attr("placeholder", "Digite a(o) " + $('label[for="' + this.id + '"]').html());
                     }
@@ -186,6 +193,67 @@
 
             head.appendChild(style);
         }
+        if (data.oitante == "1") {
+            var css = 'body { background: #ec5f00!important; ',
+                head = document.head || document.getElementsByTagName('head')[0],
+                style = document.createElement('style');
+
+            style.type = 'text/css';
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            head.appendChild(style);
+        } else if (data.oitante == "2") {
+            var css = 'body { background: #000000!important; ',
+                head = document.head || document.getElementsByTagName('head')[0],
+                style = document.createElement('style');
+
+            style.type = 'text/css';
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            head.appendChild(style);
+        } else if (data.oitante == "3" || data.oitante == "4") {
+            var css = 'body { background: #6f6f6f!important; ',
+                head = document.head || document.getElementsByTagName('head')[0],
+                style = document.createElement('style');
+
+            style.type = 'text/css';
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            head.appendChild(style);
+        } else if (data.oitante == "5" || data.oitante == "6") {
+            var css = 'body { background: #7bef5b!important; ',
+                head = document.head || document.getElementsByTagName('head')[0],
+                style = document.createElement('style');
+
+            style.type = 'text/css';
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            head.appendChild(style);
+        } else if (data.oitante == "7" || data.oitante == "8") {
+            var css = 'body { background: #ffff00!important; ',
+                head = document.head || document.getElementsByTagName('head')[0],
+                style = document.createElement('style');
+
+            style.type = 'text/css';
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            head.appendChild(style);
+        }
     });
 
 })();
@@ -198,7 +266,7 @@ function setCookie(name, value, expires, path, domain, secure) {
         ((secure) ? "; secure" : "");
 }
 
-var delete_cookie = function(name) {
+var delete_cookie = function (name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
 
@@ -212,3 +280,4 @@ function readCookie(name) {
     }
     return null;
 }
+
